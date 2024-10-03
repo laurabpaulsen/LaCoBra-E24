@@ -9,4 +9,4 @@ This repository holds the code used for the EEG lab for Language, Cognition and 
     * [Class notes](EEG-analysis-grouplvl/class_notes.md)
 
 
-All code is tested on [uCloud](https://cloud.sdu.dk/app/dashboard) using Coder Python version x.xx.xx
+All code is tested on [uCloud](https://cloud.sdu.dk/app/dashboard) using Coder Python version 1.93.1
