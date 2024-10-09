@@ -85,30 +85,26 @@ def update_events_group1_group2(events, event_id, logfile):
                 else:
                     tmp_event[-1] = event_id[f"word/prime/{prime_gender}/{prime_age}"]
 
-            # SHIT SHOW
             if event[-1] == 20:
                 congruency = "congruent" if target_gender == prime_gender else "incongruent" 
                 
                 if prime_gender in ["female", "male"] and target_gender in ["female", "male"]:
-                    tmp_event[-1] = event_id[f"word/target/{prime_gender}/{congruency}"]
-                
-                elif prime_gender == "filler":
-                    tmp_event[-1] = event_id[f"word/target/{prime_gender}"]
+                    tmp_event[-1] = event_id[f"word/target/{target_gender}/{congruency}"]
                 
                 else:
-                    tmp_event[-1] = event_id[f"word/target/{prime_gender}/{target_gender}"]
+                    tmp_event[-1] = event_id[f"word/target/{target_gender}/{prime_gender}"]
 
-        
-            # WORKS
             if event[-1] == 30:
                 congruency = "congruent" if target_gender == prime_gender else "incongruent" 
 
-                if prime_gender == "filler":
-                    tmp_event[-1] = event_id[f"response/{correct}/{prime_gender}/{response}"]
+                if target_gender in ["control", "neutral"]:
+                    tmp_event[-1] = event_id[f"response/{correct}/{target_gender}/{prime_gender}/{response}"]
+                
                 elif prime_gender in ["female", "male"] and target_gender in ["female", "male"]:
-                    tmp_event[-1] = event_id[f"response/{correct}/{prime_gender}/{congruency}/{response}"]
+                    tmp_event[-1] = event_id[f"response/{correct}/{target_gender}/{congruency}/{response}"]
+                
                 else:
-                    tmp_event[-1] = event_id[f"response/{correct}/{prime_gender}/{target_gender}/{response}"]
+                    tmp_event[-1] = event_id[f"response/{correct}/{target_gender}/{prime_gender}/{response}"]
         
             updated_events.append(tmp_event)
 
